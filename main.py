@@ -30,7 +30,7 @@ def Encode_Convert_Save(target_files, src_type, dst_type):
             file_ptr.close()
         except:
             print("Target file {} can't open with {} ...".format(target_file, dst_type))
-            content = open(target_file, encoding=src_type, mode='r').read() # 以 GB2312 讀取內容
+            content = open(target_file, encoding=src_type, mode='r', errors="ignore").read() # 以 GB2312 讀取內容
             file_ptr = open(target_file, encoding=dst_type, mode='w') # 以 UTF-8 打開檔案指標
             file_ptr.write(content) # 寫入存檔
             file_ptr.close()
