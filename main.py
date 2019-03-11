@@ -25,7 +25,7 @@ def Encode_Convert_Save(target_files, src_type, dst_type):
     count = 0
     for target_file in target_files:
         try: #能夠直接用目標編碼 read() 就不需要轉換
-            file_ptr = open(target_file, encoding=dst_type)
+            file_ptr = open(target_file, encoding=dst_type, mode='r')
             file_ptr.read()
             file_ptr.close()
         except:
