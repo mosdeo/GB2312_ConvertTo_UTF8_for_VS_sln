@@ -27,6 +27,7 @@ def Encode_Convert_Save(target_files, src_type, dst_type):
         try: #能夠直接用目標編碼 read() 就不需要轉換
             file_ptr = open(target_file, encoding=dst_type)
             file_ptr.read()
+            file_ptr.close()
         except:
             content = open(target_file, encoding=src_type, mode='r').read() # 以 GB2312 讀取內容
             file_ptr = open(target_file, encoding=dst_type, mode='w') # 以 UTF-8 打開檔案指標
